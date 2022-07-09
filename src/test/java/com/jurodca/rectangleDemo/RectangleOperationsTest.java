@@ -49,5 +49,23 @@ public class RectangleOperationsTest {
 		assertFalse(operations.intersect(r1,r2));
 	}
 
+	@Test
+	public void when_RectangleR1_Contains_RectangleR2() {
+		Rectangle r1 = new Rectangle(new Point(0,10), new Point(10,0));
+		Rectangle r2 = new Rectangle(new Point(2,5), new Point(5,1));
+
+		Operations<Rectangle> operations = new RectangleOperations();
+		assertTrue(operations.contains(r1, r2));
+	}
+
+	@Test
+	public void when_RectangleR1_Not_Contains_RectangleR2() {
+		Rectangle r1 = new Rectangle(new Point(0,10), new Point(10,0));
+		Rectangle r2 = new Rectangle(new Point(11,10), new Point(15,0));
+
+		Operations<Rectangle> operations = new RectangleOperations();
+		assertFalse(operations.contains(r1, r2));
+	}
+
 }
 
