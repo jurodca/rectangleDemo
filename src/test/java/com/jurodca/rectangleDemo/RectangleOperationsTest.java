@@ -102,10 +102,10 @@ public class RectangleOperationsTest {
   @Test
   public void when_RectangleR1_Is_Not_Adjacent_To_RectangleR2() {
     Rectangle r1 = new Rectangle(new Point(0, 10), new Point(10, 0));
-    Rectangle r2 = new Rectangle(new Point(11, 10), new Point(15, 0));
+    Rectangle r2 = new Rectangle(new Point(12, 11), new Point(15, 0));
 
     Operations<Rectangle> operations = new RectangleOperations();
-    assertFalse(operations.intersect(r1, r2));
+    assertFalse(operations.isAdjacentTo(r1, r2));
   }
 
   @Test
