@@ -72,18 +72,7 @@ public class RectangleDemoApplication {
 
       Rectangle r2 = new Rectangle(topLeft, bottomRight);
 
-      Operations<Rectangle> operations = new RectangleOperations();
-
-      if (operations.intersect(r1, r2)) {
-        System.out.println("The rectangle r1 intersects with rectangle r2\2");
-      } else if (operations.contains(r1, r2)) {
-        System.out.println("The rectangle r1 contains rectangle r2\n");
-      } else if (operations.isAdjacentTo(r1, r2)) {
-        System.out.println("The rectangle r1 is adjacent to rectangle r2\n");
-      } else {
-        System.out.println(
-            "Rectangle r1 does not intersect, or does not contain, or is not adjacent to rectangle r2 \n");
-      }
+      analyzeRectangles(r1, r2);
 
       System.out.println("Do you want to continue entering other triangles? Y / N: \n");
       String answer = scanner.next();
@@ -93,5 +82,20 @@ public class RectangleDemoApplication {
       }
 
     } while (continueWithExercise);
+  }
+
+  private static void analyzeRectangles(Rectangle r1, Rectangle r2) {
+    Operations<Rectangle> operations = new RectangleOperations();
+
+    if (operations.intersect(r1, r2)) {
+      System.out.println("The rectangle r1 intersects with rectangle r2\2");
+    } else if (operations.contains(r1, r2)) {
+      System.out.println("The rectangle r1 contains rectangle r2\n");
+    } else if (operations.isAdjacentTo(r1, r2)) {
+      System.out.println("The rectangle r1 is adjacent to rectangle r2\n");
+    } else {
+      System.out.println(
+          "Rectangle r1 does not intersect, or does not contain, or is not adjacent to rectangle r2 \n");
+    }
   }
 }
